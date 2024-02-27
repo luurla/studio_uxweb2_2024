@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Basic Socket template</title>
     <style>
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            touch-action: none; /* disable touch events on the browser itself. We use the touch events for drawing */
+        }
+
+        canvas {
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
     </style>
 </head>
 
 <body>
+    <canvas id="canvas"></canvas>
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script>
@@ -24,7 +38,9 @@
         console.log(msg);
     });
 
+    // connection established to the server
     socket.on("connect", () => {
+        // send a message to the server for the other clients
         socket.emit("client_msg", "Hello from the client " + socket.id);
     });
 
