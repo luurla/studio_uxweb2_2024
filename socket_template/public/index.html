@@ -26,7 +26,9 @@
 <body>
     <canvas id="canvas" width="1000"></canvas>
 </body>
+
 <script src="/socket.io/socket.io.js"></script>
+
 <script>
 
     const socket = io();
@@ -92,20 +94,23 @@
                 to: { x: e.clientX, y: e.clientY }
             })
 
-            draw_path(last_mouse, { x: e.clientX, y: e.clientY }, "white");
+            draw_path(last_mouse, { x: e.clientX, y: e.clientY });
             last_mouse.x = e.clientX;
             last_mouse.y = e.clientY;
         }
     }
 
-    function draw_path(from, to, colour) {
-        ctx.strokeStyle = colour;
+    function draw_path(from, to) {
+        ctx.strokeStyle = "white";
         ctx.beginPath();
         ctx.moveTo(from.x, from.y);
         ctx.lineTo(to.x, to.y);
         ctx.closePath();
         ctx.stroke();
     }
+
+
+
     canvas.addEventListener('pointerdown', startDraw);
     canvas.addEventListener('pointerup', endDraw);
     canvas.addEventListener('pointermove', draw);
