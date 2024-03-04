@@ -53,7 +53,7 @@
         console.log("received draw event");
         console.log(msg);
 
-        draw_path(msg.from, msg.to, "black")
+        draw_path(msg.from, msg.to, msg.colour)
     });
 
     let canvas = document.getElementById('canvas');
@@ -90,7 +90,7 @@
             console.log("draw");
 
             socket.emit("draw", {
-                from: { x: last_mouse.x, y: last_mouse.y },
+                from: { x: last_mouse.x, y: last_mouse.y},
                 to: { x: e.clientX, y: e.clientY }
             })
 
@@ -100,8 +100,8 @@
         }
     }
 
-    function draw_path(from, to) {
-        ctx.strokeStyle = "white";
+    function draw_path(from, to,colour) {
+        ctx.strokeStyle = colour;
         ctx.beginPath();
         ctx.moveTo(from.x, from.y);
         ctx.lineTo(to.x, to.y);
