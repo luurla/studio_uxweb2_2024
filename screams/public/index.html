@@ -26,29 +26,22 @@
 
     <!-- Blaue circles -->
     <svg id="ripple-templateM" version="1.1" xmlns="http://www.w3.org/2000/svg"
-        style="background: none; display: none; shape-rendering: auto;" viewBox="-250 -250 1800 1800"
+        style="background: none; display: none; shape-rendering: auto;" viewBox="-250 -250 500 500"
         preserveAspectRatio="xMidYMid">
-        <path
-            d="m21.78 1.22 1.29 7.12c.14.76 1.12.99 1.58.36l4.25-5.86c.58-.79 1.82-.19 1.56.75l-1.93 6.98c-.21.75.58 1.38 1.27 1.01l6.37-3.43c.86-.47 1.73.62 1.08 1.36l-4.77 5.45c-.51.58-.07 1.5.7 1.46l7.23-.33c.98-.04 1.29 1.31.39 1.69l-6.66 2.84c-.71.3-.71 1.32 0 1.62l6.66 2.84c.9.39.59 1.73-.39 1.69l-7.23-.33c-.77-.04-1.21.88-.7 1.46l4.77 5.45c.65.74-.22 1.82-1.08 1.36l-6.37-3.43c-.68-.37-1.47.26-1.27 1.01l1.93 6.98c.26.95-.99 1.55-1.56.75l-4.25-5.86a.881.881 0 0 0-1.58.36l-1.29 7.12c-.17.97-1.56.97-1.73 0l-1.29-7.12a.881.881 0 0 0-1.58-.36l-4.25 5.86c-.58.79-1.82.19-1.56-.75l1.93-6.98c.21-.75-.58-1.38-1.27-1.01l-6.37 3.43c-.86.47-1.73-.62-1.08-1.36l4.77-5.45c.51-.58.07-1.5-.7-1.46l-7.23.33c-.98.04-1.29-1.31-.39-1.69l6.66-2.84c.71-.3.71-1.32 0-1.62l-6.66-2.84c-.9-.39-.59-1.73.39-1.69l7.23.33c.77.04 1.21-.88.7-1.46L4.57 9.51c-.64-.74.22-1.82 1.08-1.35l6.37 3.43c.68.37 1.47-.26 1.27-1.01L11.36 3.6c-.26-.95.99-1.55 1.56-.75l4.25 5.86c.46.63 1.44.4 1.58-.36l1.29-7.12c.18-.97 1.56-.97 1.74-.01Z"
-            style="fill:#e6edff;stroke:#0000ff;stroke-miterlimit:10">
+        <circle r="5" fill="none" stroke="#1092c9" stroke-width="5">
             <animate attributeName="r" dur="2s" values="0;250" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline"
                 begin="0s"></animate>
             <animate attributeName="opacity" dur="2s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1"
                 calcMode="spline" begin="0s" fill="freeze"></animate>
-
-            <animateTransform attributeName="transform" attributeType="XML" type="scale" from="1 1" to="7 7" dur="2s"
-                repeatCount="indefinite"> </animateTransform>
-        </path>
-        <path d="M38.64 22.73 49.13.58c.06-.14.27-.08.25.07l-3.03 24.33c0 .11.11.19.2.13l20.81-12.97c.13-.08.27.08.17.2l-15.7 18.83c-.07.09 0 .22.1.22l24.51.34c.15 0 .18.22.04.26L53.1 39.34c-.11.03-.13.18-.03.24L73.5 53.12c.13.08.04.28-.11.24L49.74 46.9c-.11-.03-.2.08-.16.18l9.87 22.44c.06.14-.12.26-.22.14l-16.4-18.22a.134.134 0 0 0-.23.07l-3.83 24.22c-.02.15-.24.15-.26 0l-3.95-24.2c-.02-.11-.16-.15-.23-.07l-16.31 18.3c-.1.11-.28 0-.22-.14l9.76-22.49c.04-.1-.05-.21-.16-.18L3.79 53.53c-.15.04-.24-.16-.11-.24l20.37-13.64c.09-.06.07-.21-.03-.24L.59 32.18c-.14-.04-.11-.26.04-.26l24.51-.46c.11 0 .17-.13.1-.22L9.45 12.49c-.1-.12.04-.28.17-.2l20.87 12.86c.1.06.22-.02.2-.13L27.54.7c-.02-.15.19-.21.25-.07l10.6 22.1c.05.1.2.1.25 0Z" style="fill:#e6edff;stroke:#0000ff;stroke-miterlimit:10">
-            <animate attributeName="opacity" dur="0.3s" values="0;0" keyTimes="0;1" keySplines="0.2 0 0.8 1"
+        </circle>
+        <circle r="5" fill="none" stroke="#1092c9" stroke-width="5">
+            <animate attributeName="opacity" dur="0.6s" values="0;0" keyTimes="0;1" keySplines="0.2 0 0.8 1"
                 calcMode="spline" begin="0s" fill="freeze"></animate>
             <animate attributeName="r" dur="2s" values="0;250" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline"
-                begin="0.3s"></animate>
+                begin="0.6s"></animate>
             <animate attributeName="opacity" dur="2s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1"
-                calcMode="spline" begin="0.6s" fill="freeze"></animate>  <animateTransform attributeName="transform" attributeType="XML" type="scale" from="1 1" to="5 5" dur="2s"
-                repeatCount="indefinite"> </animateTransform>
-        </path>
-
+                calcMode="spline" begin="0.6s" fill="freeze"></animate>
+        </circle>
         <circle r="5" fill="none" stroke="#1092c9" stroke-width="5">
             <animate attributeName="opacity" dur="1.2s" values="0;0" keyTimes="0;1" keySplines="0.2 0 0.8 1"
                 calcMode="spline" begin="0s" fill="freeze"></animate>
@@ -142,7 +135,7 @@
         let height = 500;
         new_rippleM.setAttribute("height", height + "px");
         new_rippleM.setAttribute("width", width + "px");
-        new_rippleM.setAttribute("viewBox", `-${width} -${height}  ${width} ${height}`);
+        new_rippleM.setAttribute("viewBox", `-${width / 2} -${height / 2}  ${width} ${height}`);
 
         // set center of the ripple at the mouse position
         new_rippleM.style.top = y - (innerWidth/2) + 'px';
