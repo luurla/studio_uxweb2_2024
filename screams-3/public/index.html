@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Ripple Demo</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+      }
+
+      body {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <audio
+      id="audioPlayer"
+      src="./water effect echo.mp3"
+      preload="auto"
+      type="audio/mpeg"
+    ></audio>
+
+    <!-- original template -->
+    <svg
+      id="ripple-template"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="background: none; display: none; shape-rendering: auto"
+      viewBox="-250 -250 500 500"
+      preserveAspectRatio="xMidYMid"
+    >
+      <circle r="5" fill="none" stroke="#1092c9" stroke-width="5">
+        <animate
+          attributeName="r"
+          dur="2s"
+          values="0;250"
+          keyTimes="0;1"
+          keySplines="0 0.2 0.8 1"
+          calcMode="spline"
+          begin="0s"
+        ></animate>
+        <animate
+          attributeName="opacity"
+          dur="2s"
+          values="1;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0s"
+          fill="freeze"
+        ></animate>
+      </circle>
+      <circle r="5" fill="none" stroke="#1092c9" stroke-width="5">
+        <animate
+          attributeName="opacity"
+          dur="0.6s"
+          values="0;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0s"
+          fill="freeze"
+        ></animate>
+        <animate
+          attributeName="r"
+          dur="2s"
+          values="0;250"
+          keyTimes="0;1"
+          keySplines="0 0.2 0.8 1"
+          calcMode="spline"
+          begin="0.6s"
+        ></animate>
+        <animate
+          attributeName="opacity"
+          dur="2s"
+          values="1;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0.6s"
+          fill="freeze"
+        ></animate>
+      </circle>
+      <circle r="5" fill="none" stroke="#1092c9" stroke-width="5">
+        <animate
+          attributeName="opacity"
+          dur="1.2s"
+          values="0;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0s"
+          fill="freeze"
+        ></animate>
+        <animate
+          attributeName="r"
+          dur="2s"
+          values="0;250"
+          keyTimes="0;1"
+          keySplines="0 0.2 0.8 1"
+          calcMode="spline"
+          begin="1.2s"
+        ></animate>
+        <animate
+          class="last"
+          attributeName="opacity"
+          dur="2s"
+          values="1;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="1.2s"
+          fill="freeze"
+        ></animate>
+      </circle>
+    </svg>
+
+    <!-- female template -->
+    <svg
+      id="ripple-templateW"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="background: none; display: none; shape-rendering: auto"
+      viewBox="-250 -250 500 500"
+      preserveAspectRatio="xMidYMid"
+    >
+      <circle r="5" fill="none" stroke="#ffc0cb" stroke-width="5">
+        <animate
+          attributeName="r"
+          dur="2s"
+          values="0;250"
+          keyTimes="0;1"
+          keySplines="0 0.2 0.8 1"
+          calcMode="spline"
+          begin="0s"
+        ></animate>
+        <animate
+          attributeName="opacity"
+          dur="2s"
+          values="1;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0s"
+          fill="freeze"
+        ></animate>
+      </circle>
+
+      <circle r="5" fill="none" stroke="#ffc0cb" stroke-width="5">
+        <animate
+          attributeName="opacity"
+          dur="0.6s"
+          values="0;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0s"
+          fill="freeze"
+        ></animate>
+        <animate
+          attributeName="r"
+          dur="2s"
+          values="0;250"
+          keyTimes="0;1"
+          keySplines="0 0.2 0.8 1"
+          calcMode="spline"
+          begin="0.6s"
+        ></animate>
+        <animate
+          attributeName="opacity"
+          dur="2s"
+          values="1;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0.6s"
+          fill="freeze"
+        ></animate>
+      </circle>
+      
+      <circle r="5" fill="none" stroke="#ffc0cb" stroke-width="5">
+        <animate
+          attributeName="opacity"
+          dur="1.2s"
+          values="0;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0s"
+          fill="freeze"
+        ></animate>
+        <animate
+          attributeName="r"
+          dur="2s"
+          values="0;250"
+          keyTimes="0;1"
+          keySplines="0 0.2 0.8 1"
+          calcMode="spline"
+          begin="1.2s"
+        ></animate>
+        <animate
+          class="last"
+          attributeName="opacity"
+          dur="2s"
+          values="1;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="1.2s"
+          fill="freeze"
+        ></animate>
+      </circle>
+    </svg>
+
+    <!-- male template -->
+    <svg
+      id="ripple-templateM"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="background: none; display: none; shape-rendering: auto"
+      viewBox="-250 -250 500 500"
+      preserveAspectRatio="xMidYMid"
+    >
+      <circle r="5" fill="none" stroke="#1092c9" stroke-width="5">
+        <animate
+          attributeName="r"
+          dur="2s"
+          values="0;250"
+          keyTimes="0;1"
+          keySplines="0 0.2 0.8 1"
+          calcMode="spline"
+          begin="0s"
+        ></animate>
+        <animate
+          attributeName="opacity"
+          dur="2s"
+          values="1;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0s"
+          fill="freeze"
+        ></animate>
+      </circle>
+      <circle r="5" fill="none" stroke="#1092c9" stroke-width="5">
+        <animate
+          attributeName="opacity"
+          dur="0.6s"
+          values="0;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0s"
+          fill="freeze"
+        ></animate>
+        <animate
+          attributeName="r"
+          dur="2s"
+          values="0;250"
+          keyTimes="0;1"
+          keySplines="0 0.2 0.8 1"
+          calcMode="spline"
+          begin="0.6s"
+        ></animate>
+        <animate
+          class="last"
+          attributeName="opacity"
+          dur="2s"
+          values="1;0"
+          keyTimes="0;1"
+          keySplines="0.2 0 0.8 1"
+          calcMode="spline"
+          begin="0.6s"
+          fill="freeze"
+        ></animate>
+      </circle>
+    </svg>
+  </body>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    let offset_x = 0;
+    let myGender = "";
+
+    // send dimensions of the window to the server
+    send_dimensions();
+
+    // received a ripple event from another client (with gender)
+    socket.on("ripple", (msg) => {
+      console.log("msg.gender: ", msg.gender);
+      add_ripple(msg.x - offset_x, msg.y, msg.gender);
+    });
+
+    socket.on("offset_x", (offset) => {
+      console.log(offset);
+      offset_x = offset;
+    });
+
+    socket.on("genderAssignment", (o) => {
+      myGender = o;
+      console.log("myGender:", myGender);
+    });
+
+    // create a ripple on click and send it to the other clients
+    document.addEventListener("click", (e) => {
+      // add ripple according to gender
+      add_ripple(e.pageX, e.pageY, myGender.gender);
+
+      // emit ripple to other clients with gender
+      socket.emit("ripple", {
+        x: offset_x + e.pageX,
+        y: e.pageY,
+        gender: myGender.gender,
+      });
+      let audioPlayer = document.getElementById("audioPlayer");
+
+      // play gender specific sound
+      audioPlayer.src = myGender.sound;
+      audioPlayer.currentTime = 0;
+      audioPlayer.play();
+    });
+
+    function add_ripple(x, y, gender) {
+      // use the gender assigned ripple template (if templates are different)
+      // if it's just about changing colors, you can use the same template and just hardcode the change of circle's colors
+      let ripple_template_id = "";
+
+      if (gender === "female") {
+        ripple_template_id = "ripple-templateW";
+      } else if (gender === "male") {
+        ripple_template_id = "ripple-templateM";
+      }
+
+      // make a copy of the ripple template
+      let ripple_template = document.getElementById(ripple_template_id);
+      let new_ripple = ripple_template.cloneNode(true);
+      // avoid duplicate IDs
+      new_ripple.id = "ripple" + Math.random() * 1000;
+
+      let width = 500;
+      let height = 500;
+
+      new_ripple.setAttribute("height", height + "px");
+      new_ripple.setAttribute("width", width + "px");
+      new_ripple.setAttribute(
+        "viewBox",
+        `-${width / 2} -${height / 2}  ${width} ${height}`
+      );
+
+      // set center of the ripple at the mouse position
+      new_ripple.style.top = y - height / 2 + "px";
+      new_ripple.style.left = x - width / 2 + "px";
+      new_ripple.style.display = "block";
+      new_ripple.style.position = "absolute";
+      let animate = new_ripple.querySelector(".last");
+      // remove the ripple after the animation ends
+      animate.addEventListener("endEvent", () => {
+        new_ripple.remove();
+      });
+      document.body.appendChild(new_ripple);
+    }
+
+    window.addEventListener("resize", function (event) {
+      // TODO let the server handle window resize
+      //     socket.emit('dimensions', { width: document.documentElement.clientWidth, height: document.documentElement.clientHeight });
+    });
+
+    function send_dimensions() {
+      socket.emit("dimensions", {
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight,
+      });
+    }
+  </script>
+</html>
